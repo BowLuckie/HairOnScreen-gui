@@ -1,13 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hair on Screen Gui</title>
   </head>
   <body>
-<button id="increment">Increment</button>
-    <script src="popup.js">
-    </script>
+    <p>Hair Count:</p>
+    <p id="counter">0</p>
+
+    <button id="increment">increment</button>
+    <button id="decrement">decrement</button>
+    <button id="reset">reset</button>
+    <button id="randomize">randomize</button>
+    <button id="countRequest">log count</button>
+    <button id="exact">exact</button>
+
+    <input
+      type="text"
+      id="exactIn"
+      placeholder="enter exact amount (1 by default)"
+    />
+
+    <p id="needsReset"></p>
+    <script src="popup.js"></script>
   </body>
 </html>
