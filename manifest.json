@@ -13,7 +13,7 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
-  "permissions": ["contextMenus", "storage"],
+  "permissions": ["contextMenus", "storage", "tabs"],
   "background": {
     "service_worker": "background.js"
   },

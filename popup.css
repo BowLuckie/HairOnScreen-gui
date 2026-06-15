@@ -189,3 +189,9 @@ svg.icon {
   stroke-linejoin: round;
   flex-shrink: 0;
 }
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

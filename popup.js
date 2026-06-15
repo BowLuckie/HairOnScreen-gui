@@ -48,6 +48,14 @@ function main() {
     );
   });
 
+  document.getElementById("reloadPage").addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.reload(tabs[0].id, () => {
+        show_status("Page Reloaded!", false);
+      });
+    });
+  });
+
   document.getElementById("exact").addEventListener("click", () => {
     const raw = parseInt(document.getElementById("exactIn").value, 10);
     const value = isNaN(raw) ? 0 : raw;

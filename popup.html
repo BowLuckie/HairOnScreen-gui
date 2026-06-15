@@ -14,8 +14,19 @@
   </head>
   <body>
     <div class="card">
-      <p class="title">Hair on screen</p>
-      <p class="counter-display" id="counter">0</p>
+      <div class="topRow">
+        <div style="text-align: left">
+          <p class="title">Hair on screen</p>
+          <p class="counter-display" id="counter">0</p>
+        </div>
+        <button id="reloadPage" class="reloadButton" style="align-self: top">
+          <svg class="icon" viewBox="0 0 24 24">
+            <polyline points="23 4 23 10 17 10" />
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+          </svg>
+          Reload Page
+        </button>
+      </div>
 
       <hr class="divider" />
 
@@ -74,7 +85,7 @@
         </button>
       </div>
 
-      <p class="status hidden" id="needsReset"></p>
+      <p class="status" id="needsReset">You can toggle this popups visibility in the context menu for discrete pranking!</p>
     </div>
 
     <script src="popup.js"></script>
