@@ -90,3 +90,9 @@ function resetNumImages() {
 function randomizeHair() {
   chrome.storage.sync.set( { "hairImages": [] } );
 }
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if ( message.action == "popupCallIncrement" ) {
+    incrementNumImages();
+  }
+})
