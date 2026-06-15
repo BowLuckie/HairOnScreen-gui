@@ -48,14 +48,9 @@ function main() {
     );
   });
 
-  document.getElementById("countRequest").addEventListener("click", () => {
-    chrome.runtime.sendMessage({ action: "getNumImages" }, (response) => {
-      console.log(response.numImages);
-    });
-  });
-
   document.getElementById("exact").addEventListener("click", () => {
-    const value = parseInt(document.getElementById("exactIn").value, 10);
+    const raw = parseInt(document.getElementById("exactIn").value, 10);
+    const value = isNaN(raw) ? 0 : raw;
     if (value >= 0 && value <= 2048) {
       chrome.runtime.sendMessage(
         { action: "popupCallSetExact", value: value },
@@ -64,10 +59,7 @@ function main() {
         },
       );
     } else {
-      console.log("out of bounds");
-
-      let warning_text = document.getElementById("needsReset");
-      warning_text.textContent = "hair amount must be between 0 and 2048!";
+      show_status("hair amount must be between 0 and 2048!", true);
     }
   });
 }
@@ -85,7 +77,12 @@ function update_count(offrip = false) {
 }
 
 function needs_reset() {
-  let warning_text = document.getElementById("needsReset");
+  show_status("Webpage must be reloaded for changes to become visible!");
+}
 
-  warning_text.textContent = "Webpage must be reloaded for hair to be visible!";
+function show_status(text, isWarn = false) {
+  const el = document.getElementById("needsReset");
+  el.textContent = text;
+  el.classList.remove("hidden");
+  el.classList.toggle("warn", isWarn);
 }

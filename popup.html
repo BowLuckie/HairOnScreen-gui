@@ -3,26 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hair on Screen Gui</title>
+    <title>Hair on Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <p>Hair Count:</p>
-    <p id="counter">0</p>
+    <div class="card">
+      <p class="title">Hair on screen</p>
+      <p class="counter-display" id="counter">0</p>
 
-    <button id="increment">increment</button>
-    <button id="decrement">decrement</button>
-    <button id="reset">reset</button>
-    <button id="randomize">randomize</button>
-    <button id="countRequest">log count</button>
-    <button id="exact">exact</button>
+      <hr class="divider" />
 
-    <input
-      type="text"
-      id="exactIn"
-      placeholder="enter exact amount (1 by default)"
-    />
+      <div class="btn-grid">
+        <button id="increment">
+          <svg class="icon" viewBox="0 0 24 24">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+          Increment
+        </button>
+        <button id="decrement">
+          <svg class="icon" viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+          Decrement
+        </button>
+      </div>
 
-    <p id="needsReset"></p>
+      <div class="btn-grid-2">
+        <button id="randomize">
+          <svg class="icon" viewBox="0 0 24 24">
+            <polyline points="16 3 21 3 21 8" />
+            <line x1="4" y1="20" x2="21" y2="3" />
+            <polyline points="21 16 21 21 16 21" />
+            <line x1="15" y1="15" x2="21" y2="21" />
+          </svg>
+          Random
+        </button>
+        <button id="reset" class="danger">
+          <svg class="icon" viewBox="0 0 24 24">
+            <polyline points="1 4 1 10 7 10" />
+            <path d="M3.51 15a9 9 0 1 0 .49-3.5" />
+          </svg>
+          Reset
+        </button>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="exact-row">
+        <input
+          type="number"
+          id="exactIn"
+          placeholder="Exact amount (default 0)"
+          min="0"
+        />
+        <button id="exact">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+            />
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+          </svg>
+          Set
+        </button>
+      </div>
+
+      <p class="status hidden" id="needsReset"></p>
+    </div>
+
     <script src="popup.js"></script>
   </body>
 </html>
