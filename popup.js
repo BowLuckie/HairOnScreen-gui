@@ -70,6 +70,12 @@ function main() {
       show_status("hair amount must be between 0 and 2048!", true);
     }
   });
+
+  document.getElementById("exactIn").addEventListener("keydown", (k) => {
+    if (k.key === "Enter") {
+      document.getElementById("exact").click();
+    }
+  });
 }
 
 function update_count(offrip = false) {
