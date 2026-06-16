@@ -14,11 +14,11 @@ body {
 }
 
 :root {
-  --bg: #f7f5f2;
+  --bg: #ece8e2;
   --surface: #ffffff;
-  --border: #e2ddd8;
-  --text: #1a1916;
-  --muted: #8a8680;
+  --border: #d4cdc4;
+  --text: #15140f;
+  --muted: #6b675f;
   --accent: #c1440e;
   --accent-light: #fdf0eb;
   --danger: #c1440e;
@@ -50,6 +50,7 @@ body {
   width: 100%;
   height: 100%;
   padding: 20px;
+  border: solid var(--accent) 2px;
 }
 
 .title {
